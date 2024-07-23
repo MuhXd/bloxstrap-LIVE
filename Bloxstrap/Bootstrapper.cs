@@ -251,15 +251,15 @@ namespace Bloxstrap
                     throw;
 
                 App.Logger.WriteLine(LOG_IDENT, $"Reverting enrolled channel to {RobloxDeployment.DefaultChannel} because HTTP {(int)ex.ResponseMessage.StatusCode}");
-                App.Settings.Prop.Channel = RobloxDeployment.DefaultChannel;
+                App.Settings.Prop.Channel = "LIVE";
                 clientVersion = await RobloxDeployment.GetInfo(App.Settings.Prop.Channel, binaryType: binaryType);
             }
 
             if (clientVersion.IsBehindDefaultChannel)
             {
-                App.Logger.WriteLine(LOG_IDENT, $"Changed Roblox channel from {App.Settings.Prop.Channel} to {RobloxDeployment.DefaultChannel}");
+                App.Logger.WriteLine(LOG_IDENT, $"Changed tried to change Roblox channel from {App.Settings.Prop.Channel} to {RobloxDeployment.DefaultChannel}");
 
-                App.Settings.Prop.Channel = RobloxDeployment.DefaultChannel;
+                App.Settings.Prop.Channel = "LIVE";
                 clientVersion = await RobloxDeployment.GetInfo(App.Settings.Prop.Channel, binaryType: binaryType);
             }
 

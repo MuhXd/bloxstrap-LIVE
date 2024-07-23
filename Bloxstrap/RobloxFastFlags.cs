@@ -15,7 +15,7 @@ namespace Bloxstrap
         private RobloxFastFlags(string applicationName, string channelName)
         {
             _applicationName = applicationName;
-            _channelName = channelName;
+            _channelName = "LIVE";
         }
 
         private async Task Fetch()
